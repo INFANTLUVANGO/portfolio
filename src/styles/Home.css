@@ -1,0 +1,206 @@
+/* 🌟 Home Container */
+.home-container {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  color: #fff;
+  position: relative;
+  overflow: hidden; 
+  z-index: 1;
+}
+
+/* 🌟 Left Section */
+.home-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+  text-align: left;
+  z-index: 2;
+}
+
+.home-content h3 {
+  font-size: 1.5rem;
+  color: #f39c12;  /* Golden yellow */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.home-content h1 {
+  font-size: 4rem;
+  margin: 0;
+  line-height: 1.1;
+  animation: slideIn 1.2s ease-in-out;
+}
+
+.home-content h1 span {
+  color: #61dafb; /* Light blue highlight */
+}
+
+/* 🌟 Professional Description */
+.professional-description {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin: 20px 0;
+  max-width: 700px;
+  animation: fadeIn 1.4s ease-in-out;
+}
+
+/* 🌟 Buttons */
+.home-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.btn-cv {
+  padding: 15px 40px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  background: #61dafb;
+  color: #161b22;
+  border: 2px solid #61dafb;
+  transition: all 0.3s ease;
+}
+
+.btn-cv:hover {
+  background: #fff;
+  color: #0d1117;
+  transform: scale(1.05);
+}
+
+/* 🌟 Full-Page Right-Side Half-Oval Image */
+.home-image-wrapper {
+  flex: 1;
+  width: 50vw;               /* ✅ Half-page width */
+  height: 100vh;              /* ✅ Full height */
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.home-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: ellipse(75% 100% at 100% 50%);   /* ✅ Half-oval shape on the right */
+  transition: transform 0.5s ease, filter 0.5s ease;
+  animation: floatAnimation 6s infinite alternate ease-in-out;
+}
+
+.home-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* 🌊 Floating Animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+/* 🌌 Floating Background Shapes */
+.background-shapes div {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.7;
+  transition: all 0.5s ease-in-out;
+}
+
+/* 🌟 Circle */
+.shape-circle {
+  width: 150px;
+  height: 150px;
+  background: rgba(97, 218, 251, 0.2);
+  border-radius: 50%;
+  top: 15%;
+  left: 10%;
+  animation: float 10s infinite alternate;
+}
+
+/* 🔺 Triangle */
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 160px solid rgba(255, 193, 7, 0.3);
+  top: 70%;
+  left: 75%;
+  animation: float 12s infinite alternate;
+}
+
+/* 🔶 Hexagon */
+.shape-hexagon {
+  width: 120px;
+  height: 70px;
+  background: rgba(142, 68, 173, 0.3);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  top: 40%;
+  left: 45%;
+  animation: rotate 15s infinite linear;
+}
+
+/* 🌟 Social Icons */
+.social-icons {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* 🎨 Individual Colors */
+.social-icons a[href*="linkedin"] {
+  color: #0a66c2;    /* LinkedIn blue */
+}
+
+.social-icons a[href*="github"] {
+  color: #171515;    /* GitHub black */
+}
+
+.social-icons a[href*="instagram"] {
+  color: #e1306c;    /* Instagram gradient pink */
+}
+
+/* Hover Effects */
+.social-icons a:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+  }
+
+  .home-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+
+
+  

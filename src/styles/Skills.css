@@ -1,0 +1,171 @@
+/* 🌟 Skills Section */
+.skills {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  color: #fff;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* 🌌 Background Shapes */
+.skills-background div {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.6;
+  transition: all 0.5s ease-in-out;
+}
+
+/* 🔥 Circle */
+.shape-circle {
+  width: 200px;
+  height: 200px;
+  background: rgba(97, 218, 251, 0.2);
+  border-radius: 50%;
+  top: 10%;
+  left: 15%;
+  animation: float 10s infinite alternate;
+}
+
+/* 🔺 Triangle */
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 210px solid rgba(255, 193, 7, 0.3);
+  top: 70%;
+  left: 80%;
+  animation: float 12s infinite alternate;
+}
+
+/* 🔶 Hexagon */
+.shape-hexagon {
+  width: 140px;
+  height: 80px;
+  background: rgba(142, 68, 173, 0.3);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  top: 50%;
+  left: 40%;
+  animation: rotate 15s infinite linear;
+}
+
+/* ✨ Keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 🔥 Section Heading */
+.skills h2 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #f39c12;  /* Warm yellow */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+/* 🌌 Skills Container */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* 🎯 Skill Card Styling */
+.skill-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* 🟡 Card Hover Effect */
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+/* 🔥 Skill Icon */
+.skill-icon {
+  font-size: 5rem;           /* Large icons */
+  color: #61dafb;             /* React.js blue */
+  margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* 🔥 Hover Effect for Icons */
+.skill-card:hover .skill-icon {
+  color: #f39c12;            /* Yellow hover effect */
+  transform: scale(1.2);
+}
+
+/* 🟢 Skill Name */
+.skill-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* ✨ Responsive Design */
+@media (max-width: 992px) {
+  .skills h2 {
+    font-size: 2.5rem;
+  }
+
+  .skill-card {
+    padding: 30px;
+  }
+
+  .skill-icon {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills h2 {
+    font-size: 2rem;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .skill-icon {
+    font-size: 3rem;
+  }
+
+  .skill-name {
+    font-size: 1.4rem;
+  }
+}
+

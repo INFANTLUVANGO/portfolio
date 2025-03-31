@@ -1,0 +1,48 @@
+/* 🔥 Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #161b22;
+    color: #fff;
+    padding: 20px 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .navbar li {
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar li:hover {
+    color: #61dafb;
+  }
+  
+  /* Responsive Navbar */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .navbar ul {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  

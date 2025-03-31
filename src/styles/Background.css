@@ -1,0 +1,179 @@
+/* 🌌 Main Background Container */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    background: linear-gradient(135deg, #0d0d0d, #1b1b1b); /* Dark background */
+  }
+  
+  /* 🎯 Canvas for Slow Floating Blobs */
+  #blobCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+  
+  /* 🔥 Soft Corner Glows */
+  .corner-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.6;
+    animation: slowGlow 18s infinite alternate ease-in-out;
+  }
+  
+  /* 🌟 Corner Glow Colors */
+  .glow1 {
+    background: rgba(97, 218, 251, 0.7); 
+    top: 5%;
+    left: 5%;
+  }
+  
+  .glow2 {
+    background: rgba(255, 107, 107, 0.7);
+    top: 10%;
+    right: 10%;
+  }
+  
+  .glow3 {
+    background: rgba(142, 68, 173, 0.7);
+    bottom: 5%;
+    left: 10%;
+  }
+  
+  .glow4 {
+    background: rgba(255, 193, 7, 0.7);
+    bottom: 5%;
+    right: 10%;
+  }
+  
+  /* 🔥 Glow Animation */
+  @keyframes slowGlow {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+  
+  /* 🌊 Flowing Waves */
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 180px;
+    background: rgba(97, 218, 251, 0.1);
+    animation: waveMotion 25s infinite alternate ease-in-out;
+  }
+  
+  .wave1 {
+    animation-delay: 0s;
+    bottom: 20%;
+  }
+  
+  .wave2 {
+    background: rgba(255, 107, 107, 0.1);
+    animation-delay: -8s;
+    bottom: 10%;
+  }
+  
+  .wave3 {
+    background: rgba(142, 68, 173, 0.1);
+    animation-delay: -16s;
+    bottom: 5%;
+  }
+  
+  /* 🎯 Wave Animation */
+  @keyframes waveMotion {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* ✅ Blob Styling */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.9;
+    filter: blur(100px);
+    animation: slowDrift 30s infinite alternate ease-in-out;
+  }
+  
+  /* 🔥 Blob Colors */
+  .blob1 {
+    background: #252525;
+    width: 300px;
+    height: 300px;
+    top: 15%;
+    left: 10%;
+    animation-duration: 35s;
+  }
+  
+  .blob2 {
+    background: #333333;
+    width: 400px;
+    height: 400px;
+    top: 60%;
+    left: 70%;
+    animation-duration: 40s;
+  }
+  
+  .blob3 {
+    background: #444444;
+    width: 350px;
+    height: 350px;
+    top: 75%;
+    left: 25%;
+    animation-duration: 45s;
+  }
+  
+  /* 🎯 Slow Blob Drift */
+  @keyframes slowDrift {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(30px, -30px) scale(1.05);
+    }
+    100% {
+      transform: translate(-30px, 30px) scale(1);
+    }
+  }
+  
+  /* 🌟 Responsive Design */
+  @media (max-width: 992px) {
+    .blob, .corner-glow {
+      width: 250px;
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .blob, .corner-glow {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  
+
+
+
+
+
+  
