@@ -43,24 +43,19 @@ const Projects = () => {
               "Developed a real-time radar visualization system capturing ASTERIX CAT048 radar data over Ethernet using Java. The decoded data is transmitted via WebSockets to a ReactJS-based frontend and visualized on a Leaflet.js map. Utilized MongoDB for real-time storage."
           },
           {
-            title: "Expense Tracker App",
+            title: "NoteMate",
             description:
-              "Built a full-stack expense tracker using ReactJS, Spring Boot, and MySQL. Features include CRUD operations, user authentication, and a responsive UI with dynamic charts."
+              "NoteMate is a full-stack note-taking web application built with Spring Boot (Java), ReactJS, and MySQL.It features user registration and login, with session-based authentication for personalized access.Users can perform create, read, update, and delete (CRUD) operations on their notes.The backend leverages Spring Data JPA for ORM and ensures secure, user-linked data storage.The frontend offers a modern, dark-themed UI with smooth transitions and responsive design"
           },
           {
-            title: "Real-time Chat Application",
+            title: "Bus Reservation",
             description:
-              "Created a real-time chat app using ReactJS, WebSockets, and Node.js. Enabled instant message broadcasting with socket connections, user authentication, and dynamic user status updates."
+              "The bus reservation system is developed in Java, with MySQL as the database for storing bus and booking details.JDBC is used to establish a connection between the Java application and MySQL, enabling dynamic data operations via SQL queries. The system handles bus management, seat availability, and reservations directly through the database."
           },
           {
-            title: "Portfolio Website",
+            title: "Weather App",
             description:
-              "Designed and developed a personal portfolio using ReactJS with Framer Motion animations. Includes smooth transitions, interactive sections, and a responsive layout with detailed project showcases."
-          },
-          {
-            title: "Weather Dashboard",
-            description:
-              "Built a weather dashboard using ReactJS, OpenWeather API, and CSS animations. Displays real-time weather data, including temperature, humidity, and forecasts."
+              "In ReactJS, integrate a weather API to fetch city-specific weather data, then use state management to dynamically update the UI with the retrieved information, offering users an intuitive interface to check weather forecasts within the React application."
           }
         ].map((project, index) => (
           <motion.div
