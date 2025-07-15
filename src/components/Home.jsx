@@ -1,11 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/Home.css";
+import About from "./About";
+import Projects from "./Projects";
+import Skills from "./Skills";   
+import Experience from "./Experience";
+import Contact from "./Contact";
 import profileImg from "../assets/myselfBW.jpg"; 
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Home = () => {
   return (
+    <div>
     <motion.div
       className="home-container"
       initial={{ opacity: 0 }}
@@ -46,9 +52,9 @@ const Home = () => {
           src={profileImg} 
           alt="Infant Luvango" 
           className="home-image"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 7.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
           whileHover={{ scale: 1.05 }}
         />
       </div>
@@ -66,6 +72,15 @@ const Home = () => {
         </a>
       </div>
     </motion.div>
+
+    <About/>
+    <Projects/>
+    <Skills/>
+    <Experience/>
+    <Contact/>
+    
+    </div>
+  
   );
 };
 
