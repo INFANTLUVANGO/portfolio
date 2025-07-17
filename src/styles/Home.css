@@ -22,18 +22,18 @@
 
 .home-content h3 {
   font-size: 1.5rem;
-  color: #f39c12;  /* Golden yellow */
+  color: #f312ef;  /* Golden yellow */
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 15px;
-  animation: fadeIn 1s ease-in-out;
+ animation: fadeIn 1s ease-in-out;
 }
 
 .home-content h1 {
   font-size: 4rem;
   margin: 0;
   line-height: 1.1;
-  animation: slideIn 1.2s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .home-content h1 span {
@@ -47,7 +47,7 @@
   color: #ccc;
   margin: 20px 0;
   max-width: 700px;
-  animation: fadeIn 1.4s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* 🌟 Buttons */
@@ -192,15 +192,70 @@
 @media (max-width: 768px) {
   .home-container {
     flex-direction: column;
+    padding: 0;
+  }
+
+  .home-content {
+    padding: 40px 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .home-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-content h3 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .professional-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn-cv {
+    width: 80%;
+    font-size: 0.95rem;
+    padding: 12px 20px;
   }
 
   .home-image-wrapper {
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: 45vh;
+    margin-top: 20px;
+  }
+
+  .home-image {
+    clip-path: ellipse(100% 100% at 50% 50%);
+    object-fit: cover;
+  }
+
+  .background-shapes div {
+    display: none; /* Optional: hide shapes for less clutter on mobile */
+  }
+
+  .social-icons {
+    top: auto;
+    bottom: 20px;
+    right: 15px;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    position: static;
+    margin-top: 30px;
+  }
+
+  .social-icons a {
+    font-size: 1.5rem;
   }
 }
-
-
-
-  
