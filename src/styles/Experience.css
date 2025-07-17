@@ -1,57 +1,143 @@
+/* 🌟 Projects Section */
+.experience {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
 
-  .experience-container {
-    min-height: calc(100vh - 80px);  /* Ensure the section fills the viewport minus footer */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #0d1117;
-    color: #fff;
-    padding: 80px 20px;
-    overflow: hidden;
-    text-align: center;
+/* 🌌 Background Shapes */
+.experience-background div {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.3;
+  transition: all 0.4s ease-in-out;
+}
+
+.shape-circle {
+  width: 180px;
+  height: 180px;
+  background: rgba(97, 218, 251, 0.2);
+  border-radius: 50%;
+  top: 10%;
+  left: 20%;
+  animation: float 8s infinite alternate;
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 160px solid rgba(255, 193, 7, 0.3);
+  top: 70%;
+  left: 65%;
+  animation: float 10s infinite alternate;
+}
+
+.shape-hexagon {
+  width: 150px;
+  height: 85px;
+  background: rgba(142, 68, 173, 0.3);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  top: 40%;
+  left: 50%;
+  animation: rotate 12s infinite linear;
+}
+
+/* 🔁 Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0);
   }
-  
-  /* Heading Style */
-  .experience-container h2 {
-    font-size: 3rem;
-    color: #61dafb;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: fadeIn 1.5s ease-in-out;
+  100% {
+    transform: translateY(-20px);
   }
-  
-  /* Experience Card Layout */
-  .experience-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    width: 100%;
-    padding-bottom: 40px;   /* Add padding at the bottom to prevent footer overlap */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .experience-card {
-    background: #161b22;
-    border: 1px solid #61dafb;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: calc(45% - 20px);
-    min-width: 300px;
-    padding: 30px;
-    text-align: left;
-    animation: slideIn 0.8s ease-in-out;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .experience-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  .experience-card h3 {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.experience h2 {
+  font-size: 3rem;
+  color: #61dafb;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out;
+  z-index: 1;
+}
+
+/* 📦 Project Cards Container */
+.experience-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* 💡 Individual Project Card */
+.experience-card {
+  background: #161b22;
+  border: 1px solid #61dafb;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  min-width: 280px;
+  max-width: 1500px;
+  padding: 40px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
+}
+
+.experience-card h3 {
+  font-size: 1.8rem;
+  color: #61dafb;
+  margin-bottom: 15px;
+}
+
+.experience-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.experience-card h3 {
     font-size: 1.8rem;
     color: #61dafb;
     margin-bottom: 10px;
@@ -68,24 +154,53 @@
     color: #ccc;
   }
   
-  /* Responsive Design */
-  @media (max-width: 992px) {
-    .experience-card {
-      width: calc(100% - 20px);
-    }
-  
-    .experience-container h2 {
-      font-size: 2.5rem;
-    }
+
+/* 📱 Responsive Design Tweaks */
+@media (max-width: 992px) {
+  .experience-card {
+    width: calc(50% - 20px);
   }
-  
-  @media (max-width: 600px) {
-    .experience-card {
-      width: 100%;
-    }
-  
-    .experience-container h2 {
-      font-size: 2rem;
-    }
+
+  .experience h2 {
+    font-size: 2.4rem;
   }
+}
+
+@media (max-width: 600px) {
+  .experience {
+    padding: 60px 15px;
+  }
+
+  .experience h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .experience-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .experience-card {
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .experience-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .experience-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .experience-background div {
+    display: none; /* Optionally hide shapes for clarity */
+  }
+}
+
+
   
