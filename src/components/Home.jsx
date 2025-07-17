@@ -31,7 +31,7 @@ const Home = () => {
   className="home-content"
   initial={{ x: -200, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
-  transition={{ duration: 1, ease: "easeOut" }}
+  transition={{ duration: 0.8, ease: "easeInOut" }}
 >
   <h3>HELLO</h3>
   <h1>I'm <span>Infant Luvango</span></h1>
@@ -55,7 +55,7 @@ const Home = () => {
   className="home-image-wrapper"
   initial={{ x: 200, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
-  transition={{ duration: 1, ease: "easeOut" }}
+  transition={{ duration: 0.8, ease: "easeInOut" }}
 >
   <motion.img 
     src={profileImg} 
