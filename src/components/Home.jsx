@@ -26,37 +26,62 @@ const Home = () => {
       </div>
 
       {/* Left Section */}
-      <div className="home-content">
-        <h3>HELLO</h3>
-        <h1>I'm <span> Infant Luvango</span></h1>
-        <p className="professional-description">
-          💻 Full Stack Developer specializing in <strong>Java, Spring Boot, ReactJS, MySQL and MongoDB</strong>, 
-          building <strong>real-time, data-driven applications</strong> with elegant designs.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="home-buttons">
-          <a 
-            href="/RESUME.pdf"    
-            download="RESUME.pdf"  
-            className="btn-cv"
-          >
-            Get My CV
-          </a>
-        </div>
+      <motion.div
+      className="home-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      {/* Floating Background Shapes */}
+      <div className="background-shapes">
+        <div className="shape-circle"></div>
+        <div className="shape-triangle"></div>
+        <div className="shape-hexagon"></div>
       </div>
 
-      {/* Right Side Full-Page Half-Oval Image */}
-      <div className="home-image-wrapper">
-        <motion.img 
-          src={profileImg} 
-          alt="Infant Luvango" 
-          className="home-image"
-          initial={{ opacity: 0, scale: 7.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-          whileHover={{ scale: 1.05 }}
-        />
+      {/* Left Section */}
+{/* 👈 Name Section Slides in from Left */}
+<motion.div
+  className="home-content"
+  variants={slideLeft}
+  initial="hidden"
+  animate="visible"
+  transition={{ duration: 1, ease: "easeOut" }}
+>
+  <h3>HELLO</h3>
+  <h1>I'm <span>Infant Luvango</span></h1>
+  <p className="professional-description">
+    💻 Full Stack Developer specializing in <strong>Java, Spring Boot, ReactJS, MySQL and MongoDB</strong>, 
+    building <strong>real-time, data-driven applications</strong> with elegant designs.
+  </p>
+  <div className="home-buttons">
+    <a 
+      href="/RESUME.pdf"    
+      download="RESUME.pdf"  
+      className="btn-cv"
+    >
+      Get My CV
+    </a>
+  </div>
+</motion.div>
+
+
+{/* 👉 Image Section Slides in from Right */}
+<motion.div
+  className="home-image-wrapper"
+  variants={slideRight}
+  initial="hidden"
+  animate="visible"
+  transition={{ duration: 1, ease: "easeOut" }}
+>
+  <motion.img 
+    src={profileImg} 
+    alt="Infant Luvango" 
+    className="home-image"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.4 }}
+  />
+</motion.div>
       </div>
 
       {/* Social Icons */}
