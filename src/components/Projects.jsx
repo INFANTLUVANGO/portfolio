@@ -17,6 +17,7 @@ const Projects = () => {
         <div className="shape-hexagon"></div>
       </div>
 
+    
       <h2>My Projects</h2>
 
       <motion.div
