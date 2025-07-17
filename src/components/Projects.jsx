@@ -8,7 +8,7 @@ const Projects = () => {
       className="projects"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0 }}
     >
       {/* Background Shapes */}
       <div className="projects-background">
@@ -61,12 +61,12 @@ const Projects = () => {
           <motion.div
             key={index}
             className="project-card"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.07 }}
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 }
             }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.1 }}
           >
             <h3>{project.title}</h3>
             <p>{project.description}</p>
