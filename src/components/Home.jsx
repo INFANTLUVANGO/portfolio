@@ -26,26 +26,11 @@ const Home = () => {
       </div>
 
       {/* Left Section */}
-      <motion.div
-      className="home-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      {/* Floating Background Shapes */}
-      <div className="background-shapes">
-        <div className="shape-circle"></div>
-        <div className="shape-triangle"></div>
-        <div className="shape-hexagon"></div>
-      </div>
-
-      {/* Left Section */}
-{/* 👈 Name Section Slides in from Left */}
+    {/* Left Section - Name and Intro Text (Slides from left) */}
 <motion.div
   className="home-content"
-  variants={slideLeft}
-  initial="hidden"
-  animate="visible"
+  initial={{ x: -200, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 1, ease: "easeOut" }}
 >
   <h3>HELLO</h3>
@@ -65,24 +50,24 @@ const Home = () => {
   </div>
 </motion.div>
 
-
-{/* 👉 Image Section Slides in from Right */}
+{/* Right Side - Profile Image (Slides from right) */}
 <motion.div
   className="home-image-wrapper"
-  variants={slideRight}
-  initial="hidden"
-  animate="visible"
+  initial={{ x: 200, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 1, ease: "easeOut" }}
 >
   <motion.img 
     src={profileImg} 
     alt="Infant Luvango" 
     className="home-image"
+    initial={{ scale: 0.9 }}
+    animate={{ scale: 1 }}
+    transition={{ duration: 0.6 }}
     whileHover={{ scale: 1.05 }}
-    transition={{ duration: 0.4 }}
   />
 </motion.div>
-      </div>
+
 
       {/* Social Icons */}
       <div className="social-icons">
@@ -110,7 +95,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-
