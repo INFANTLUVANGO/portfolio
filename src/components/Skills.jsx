@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "../styles/Skills.css";
 
-// Import all icons
-import { 
-  FaJava, FaReact, FaDatabase, FaHtml5, FaCss3Alt, FaJs, FaCode, FaBootstrap, FaGitAlt 
+// Icons
+import {
+  FaJava, FaReact, FaDatabase, FaHtml5, FaCss3Alt,
+  FaJs, FaCode, FaBootstrap, FaGitAlt,
 } from "react-icons/fa";
 import { SiSpringboot, SiMongodb, SiWebrtc, SiLeaflet } from "react-icons/si";
 
@@ -15,7 +16,6 @@ const Skills = () => {
     const timeout = setTimeout(() => {
       setIsVisible(true);
     }, 500);
-
     return () => clearTimeout(timeout);
   }, []);
 
@@ -28,14 +28,26 @@ const Skills = () => {
     { name: "WebSockets", icon: <SiWebrtc /> },
     { name: "HTML", icon: <FaHtml5 /> },
     { name: "CSS", icon: <FaCss3Alt /> },
-    { name: "JavaScript", icon: <FaJs /> },               // ✅ Replaced Node.js with JavaScript
-
-    // ✅ Additional skills
-    { name: "C ", icon: <FaCode /> },       
-    { name: "Leaflet.js", icon: <SiLeaflet /> },       
-    { name: "Bootstrap", icon: <FaBootstrap /> },      
-    { name: "Git", icon: <FaGitAlt /> }                
+    { name: "JavaScript", icon: <FaJs /> },
+    { name: "C ", icon: <FaCode /> },
+    { name: "Leaflet.js", icon: <SiLeaflet /> },
+    { name: "Bootstrap", icon: <FaBootstrap /> },
+    { name: "Git", icon: <FaGitAlt /> },
   ];
+
+  const getDirection = (i) => {
+    const directions = [
+      { x: -100, y: 0 },
+      { x: 100, y: 0 },
+      { x: 0, y: -100 },
+      { x: 0, y: 100 },
+      { x: -100, y: -100 },
+      { x: 100, y: 100 },
+      { x: -100, y: 100 },
+      { x: 100, y: -100 },
+    ];
+    return directions[i % directions.length];
+  };
 
   return (
     <motion.div
@@ -54,23 +66,27 @@ const Skills = () => {
       <h2>Skills</h2>
 
       <div className="skills-container">
-        {skills.map((skill, index) => (
-          <motion.div
-            key={index}
-            className="skill-card"
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="skill-icon">{skill.icon}</div>
-            <div className="skill-name">{skill.name}</div>
-          </motion.div>
-        ))}
+        {skills.map((skill, index) => {
+          const direction = getDirection(index);
+          return (
+            <motion.div
+              key={index}
+              className="skill-card"
+              initial={{ ...direction, opacity: 0 }}
+              animate={{ x: 0, y: 0, opacity: 1 }}
+              transition={{ duration: 0.2 , delay: index * 0.1}}
+              whileHover={{ scale: 1.2 }}
+            >
+              <div className="skill-icon">{skill.icon}</div>
+              <div className="skill-name">{skill.name}</div>
+            </motion.div>
+          );
+        })}
       </div>
     </motion.div>
   );
 };
 
 export default Skills;
-
 
 
