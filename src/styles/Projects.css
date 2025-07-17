@@ -11,17 +11,17 @@
   text-align: center;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 
 /* 🌌 Background Shapes */
 .projects-background div {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   opacity: 0.3;
-  transition: all 0.4s ease-in-out;   /* Faster shape transitions */
+  transition: all 0.4s ease-in-out;
 }
 
-/* 🔵 Circle */
 .shape-circle {
   width: 180px;
   height: 180px;
@@ -29,10 +29,9 @@
   border-radius: 50%;
   top: 10%;
   left: 20%;
-  animation: float 8s infinite alternate;  /* Faster floating */
+  animation: float 8s infinite alternate;
 }
 
-/* 🔺 Triangle */
 .shape-triangle {
   width: 0;
   height: 0;
@@ -41,10 +40,9 @@
   border-bottom: 160px solid rgba(255, 193, 7, 0.3);
   top: 70%;
   left: 65%;
-  animation: float 10s infinite alternate;  /* Faster floating */
+  animation: float 10s infinite alternate;
 }
 
-/* 🔶 Hexagon */
 .shape-hexagon {
   width: 150px;
   height: 85px;
@@ -52,10 +50,10 @@
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   top: 40%;
   left: 50%;
-  animation: rotate 12s infinite linear;  /* Faster rotation */
+  animation: rotate 12s infinite linear;
 }
 
-/* 🌌 Keyframe Animations */
+/* 🔁 Animations */
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -74,64 +72,6 @@
   }
 }
 
-/* 🌟 Heading */
-.projects h2 {
-  font-size: 3rem;
-  color: #61dafb;
-  margin-bottom: 50px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  animation: fadeIn 1s ease-in-out;  /* Slightly faster fade-in */
-  z-index: 2;
-}
-
-/* 🌟 Project Cards Container */
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  z-index: 2;
-}
-
-/* 🌟 Individual Project Cards */
-.project-card {
-  background: #161b22;
-  border: 1px solid #61dafb;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;   /* Faster hover effect */
-  width: calc(33.33% - 20px);
-  min-width: 300px;
-  padding: 40px;
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-}
-
-/* ⚡️ Faster Hover Effect */
-.project-card:hover {
-  transform: translateY(-8px);     /* Faster and more responsive */
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);  
-}
-
-/* Title */
-.project-card h3 {
-  font-size: 1.8rem;
-  color: #61dafb;
-  margin-bottom: 15px;
-}
-
-/* Description */
-.project-card p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #ccc;
-}
-
-/* 🌟 Keyframe Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -143,22 +83,104 @@
   }
 }
 
-/* 🛠️ Responsive Design */
+/* 🌟 Section Title */
+.projects h2 {
+  font-size: 3rem;
+  color: #61dafb;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out;
+  z-index: 1;
+}
+
+/* 📦 Project Cards Container */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* 💡 Individual Project Card */
+.project-card {
+  background: #161b22;
+  border: 1px solid #61dafb;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  width: calc(33.33% - 20px);
+  min-width: 280px;
+  max-width: 350px;
+  padding: 40px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
+}
+
+.project-card h3 {
+  font-size: 1.8rem;
+  color: #61dafb;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* 📱 Responsive Design Tweaks */
 @media (max-width: 992px) {
   .project-card {
     width: calc(50% - 20px);
   }
+
+  .projects h2 {
+    font-size: 2.4rem;
+  }
 }
 
 @media (max-width: 600px) {
-  .project-card {
-    width: 100%;
+  .projects {
+    padding: 60px 15px;
   }
 
   .projects h2 {
     font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .project-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .project-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .project-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .projects-background div {
+    display: none; /* Optionally hide shapes for clarity */
   }
 }
-
-
-  
