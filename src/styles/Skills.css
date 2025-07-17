@@ -78,9 +78,10 @@
 .skills h2 {
   font-size: 3rem;
   margin-bottom: 50px;
-  color: #f39c12;  /* Warm yellow */
+  color: #61dafb;  
   text-transform: uppercase;
   letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out;
   z-index: 1;
 }
 
@@ -102,7 +103,7 @@
   border-radius: 15px;
   padding: 40px 30px;
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 1s ease, box-shadow 1s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   overflow: hidden;
@@ -125,8 +126,8 @@
 
 /* 🔥 Hover Effect for Icons */
 .skill-card:hover .skill-icon {
-  color: #f39c12;            /* Yellow hover effect */
-  transform: scale(1.2);
+  color: #f312ef;           /* hover effect */
+  transform: scale(1);
 }
 
 /* 🟢 Skill Name */
@@ -136,36 +137,70 @@
   color: #ccc;
 }
 
-/* ✨ Responsive Design */
-@media (max-width: 992px) {
-  .skills h2 {
-    font-size: 2.5rem;
-  }
-
-  .skill-card {
-    padding: 30px;
-  }
-
-  .skill-icon {
-    font-size: 4rem;
-  }
-}
-
 @media (max-width: 600px) {
+  .skills {
+    padding: 15px;
+    animation: popIn 0.5s ease-out;
+  }
+
   .skills h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    animation: popIn 0.6s ease-out;
   }
 
   .skill-card {
-    padding: 20px;
+    padding: 24px;
+    border-radius: 10px;
+    background: #1c1c1c;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    animation: popIn 0.5s ease forwards;
+    transition: transform 0.3s ease;
+  }
+
+  .skill-card:hover {
+    transform: scale(1.05);
+    background: #2b2b2b;
   }
 
   .skill-icon {
-    font-size: 3rem;
+    font-size: 2.2rem;
+    color: #61dafb;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .skill-card:hover .skill-icon {
+    transform: scale(1.2);
+    color: #f312ef; 
   }
 
   .skill-name {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    margin-top: 0px;
+    color: #f0f0f0;
   }
 }
 
+/* 💫 Simple pop animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
