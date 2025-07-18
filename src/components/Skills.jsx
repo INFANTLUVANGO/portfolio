@@ -74,7 +74,7 @@ const Skills = () => {
               className="skill-card"
               initial={{ ...direction, opacity: 0 }}
               animate={{ x: 0, y: 0, opacity: 1 }}
-              transition={{ duration: 0.2 , delay: index * 0.1}}
+              transition={{ duration: 0 , delay: index * 0}}
               whileHover={{ scale: 1.2 }}
             >
               <div className="skill-icon">{skill.icon}</div>
